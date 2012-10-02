@@ -11,7 +11,14 @@
 	<div class="nav"> 
 		<%= render 'layouts/header' %>
 	</div>
+
 	<div>
+		<% if flash.any? %>
+	
+		<% flash.each do |info, msg| %>
+		<%=  msg %>
+		<% end %>
+		<% end %>
 		<%= yield %>
 
 	<%= render 'layouts/footer' %>
